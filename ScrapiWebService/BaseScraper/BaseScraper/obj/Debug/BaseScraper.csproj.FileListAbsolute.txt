@@ -1,0 +1,10 @@
+D:\Armen\ACA_C#_FILES\WebScraperTests\BaseScraper\BaseScraper\bin\Debug\BaseScraper.dll
+D:\Armen\ACA_C#_FILES\WebScraperTests\BaseScraper\BaseScraper\bin\Debug\BaseScraper.pdb
+D:\Armen\ACA_C#_FILES\WebScraperTests\BaseScraper\BaseScraper\bin\Debug\HtmlAgilityPack.dll
+D:\Armen\ACA_C#_FILES\WebScraperTests\BaseScraper\BaseScraper\bin\Debug\HtmlAgilityPack.pdb
+D:\Armen\ACA_C#_FILES\WebScraperTests\BaseScraper\BaseScraper\bin\Debug\HtmlAgilityPack.xml
+D:\Armen\ACA_C#_FILES\WebScraperTests\BaseScraper\BaseScraper\obj\Debug\BaseScraper.csprojAssemblyReference.cache
+D:\Armen\ACA_C#_FILES\WebScraperTests\BaseScraper\BaseScraper\obj\Debug\BaseScraper.csproj.CoreCompileInputs.cache
+D:\Armen\ACA_C#_FILES\WebScraperTests\BaseScraper\BaseScraper\obj\Debug\BaseScraper.csproj.CopyComplete
+D:\Armen\ACA_C#_FILES\WebScraperTests\BaseScraper\BaseScraper\obj\Debug\BaseScraper.dll
+D:\Armen\ACA_C#_FILES\WebScraperTests\BaseScraper\BaseScraper\obj\Debug\BaseScraper.pdb

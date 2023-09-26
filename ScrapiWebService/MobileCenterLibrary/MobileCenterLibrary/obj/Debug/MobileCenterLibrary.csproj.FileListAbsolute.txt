@@ -1,0 +1,12 @@
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\MobileCenterLibrary\MobileCenterLibrary\bin\Debug\MobileCenterLibrary.dll
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\MobileCenterLibrary\MobileCenterLibrary\bin\Debug\MobileCenterLibrary.pdb
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\MobileCenterLibrary\MobileCenterLibrary\bin\Debug\BaseScraper.dll
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\MobileCenterLibrary\MobileCenterLibrary\bin\Debug\HtmlAgilityPack.dll
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\MobileCenterLibrary\MobileCenterLibrary\bin\Debug\BaseScraper.pdb
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\MobileCenterLibrary\MobileCenterLibrary\bin\Debug\HtmlAgilityPack.pdb
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\MobileCenterLibrary\MobileCenterLibrary\bin\Debug\HtmlAgilityPack.xml
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\MobileCenterLibrary\MobileCenterLibrary\obj\Debug\MobileCenterLibrary.csprojAssemblyReference.cache
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\MobileCenterLibrary\MobileCenterLibrary\obj\Debug\MobileCenterLibrary.csproj.CoreCompileInputs.cache
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\MobileCenterLibrary\MobileCenterLibrary\obj\Debug\MobileCenterLibrary.csproj.CopyComplete
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\MobileCenterLibrary\MobileCenterLibrary\obj\Debug\MobileCenterLibrary.dll
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\MobileCenterLibrary\MobileCenterLibrary\obj\Debug\MobileCenterLibrary.pdb

@@ -1,0 +1,12 @@
+﻿@using WebScrapingUI.Resources;
+
+@{
+    ViewBag.Title = Account.ConfirmEmail;
+}
+
+<h2>@ViewBag.Title</h2>
+<div>
+    <p>
+        @Account.ConfirmEmailMessage @Html.ActionLink(Account.ClickHere, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+    </p>
+</div>

@@ -1,0 +1,12 @@
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\YoulaLibrary\YoulaLibrary\bin\Debug\YoulaLibrary.dll
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\YoulaLibrary\YoulaLibrary\bin\Debug\YoulaLibrary.pdb
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\YoulaLibrary\YoulaLibrary\bin\Debug\BaseScraper.dll
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\YoulaLibrary\YoulaLibrary\bin\Debug\HtmlAgilityPack.dll
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\YoulaLibrary\YoulaLibrary\bin\Debug\BaseScraper.pdb
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\YoulaLibrary\YoulaLibrary\bin\Debug\HtmlAgilityPack.pdb
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\YoulaLibrary\YoulaLibrary\bin\Debug\HtmlAgilityPack.xml
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\YoulaLibrary\YoulaLibrary\obj\Debug\YoulaLibrary.csprojAssemblyReference.cache
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\YoulaLibrary\YoulaLibrary\obj\Debug\YoulaLibrary.csproj.CoreCompileInputs.cache
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\YoulaLibrary\YoulaLibrary\obj\Debug\YoulaLibrary.csproj.CopyComplete
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\YoulaLibrary\YoulaLibrary\obj\Debug\YoulaLibrary.dll
+D:\Armen\ACA_C#_FILES\WebScraping\WebScraping\YoulaLibrary\YoulaLibrary\obj\Debug\YoulaLibrary.pdb

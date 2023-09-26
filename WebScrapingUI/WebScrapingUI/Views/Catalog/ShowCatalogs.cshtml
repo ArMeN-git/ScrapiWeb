@@ -1,0 +1,43 @@
+﻿@using WebScrapingUI.Resources;
+@model IEnumerable<WebScrapingUI.Entities.Requests>
+
+@{
+    ViewBag.Title = Catalog.CatalogsTitle;
+}
+<html>
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="res_main">
+        @if (Model != null && Model.Count() != 0)
+        {
+            <h1 class="res_count">@Catalog.Catalogs</h1>
+            <div class="results_container">
+                @foreach (var request in Model)
+                {
+                    <div class="catalog row">
+                        <div class="search_details col-sm">
+                            <h4>@Catalog.Search: @request.ItemName</h4>
+                            <h4>@Catalog.Sites: @request.Sites</h4>
+                            <h4>@Catalog.Currency: @request.Currency</h4>
+                            <h4>@Catalog.Price: @request.MinPrice - @request.MaxPrice</h4>
+                            <h4>@Catalog.Count: @request.ItemCount</h4>
+                        </div>
+                        <div class="buttons_container col-sm">
+                            @Html.ActionLink(Catalog.Search, "Get", "Catalog", new { id = request.RequestId }, new { @class = "btn btn-success" })
+                            @Html.ActionLink(Catalog.Delete, "Delete", "Catalog", new { id = request.RequestId }, new { @class = "btn btn-success" })
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        @if (Model == null || Model.Count() == 0)
+        {
+            <h1 class="res_count">@Catalog.DontHave</h1>
+        }
+    </div>
+</body>
+</html>
+

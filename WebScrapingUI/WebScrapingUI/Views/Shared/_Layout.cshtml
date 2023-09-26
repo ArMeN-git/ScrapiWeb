@@ -1,0 +1,58 @@
+﻿@using WebScrapingUI.Resources;
+@using Microsoft.AspNet.Identity
+@using System.Configuration
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrapiWeb @ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <div style="margin: 4.75px 14px 0px 14px; display: inline-block;">
+                    <a href="https://localhost:44393" style="padding: 0px 0px 0px 0px;">
+                        <img src="~/Images/logo_transparent_new.png" width="144" height="39" />
+                    </a>
+                </div>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*Html.ActionLink("Name", "Result", new { area = "" }, new { @class = "navbar-brand" })*@
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink(Menu.About, "About", "Home")</li>
+                </ul>
+
+                @Html.Partial("_LoginPartial")
+
+                <ul class="nav navbar-nav navbar-right">
+                    @{
+                        TempData["currentAction"] = ViewContext.RouteData.Values["action"];
+                        TempData["currentController"] = ViewContext.RouteData.Values["controller"];
+                    }
+                    <li>@Html.ActionLink(Menu.English, "Index", "Language", new { language = "en-us" }, null)</li>
+                    <li>@Html.ActionLink(Menu.Russian, "Index", "Language", new { language = "ru-ru" }, null)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

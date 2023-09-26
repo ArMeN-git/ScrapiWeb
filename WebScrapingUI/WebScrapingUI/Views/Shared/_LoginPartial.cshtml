@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNet.Identity
+@using System.Configuration;
+@using WebScrapingUI.Resources;
+
+@if (Request.IsAuthenticated)
+{
+    <ul class="nav navbar-nav">
+        <li>
+            @Html.ActionLink(Menu.Catalogs, "ShowCatalogs", "Catalog")
+        </li>
+        <li>
+            @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+        </li>
+    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "nav navbar-nav navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+        <li class="logoffli">
+            <a href="javascript:document.getElementById('logoutForm').submit()">@Menu.Logoff.ToString()</a>
+        </li>
+    }
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink(Menu.Register, "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink(Menu.Login, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

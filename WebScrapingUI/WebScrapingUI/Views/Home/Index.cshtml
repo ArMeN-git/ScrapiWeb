@@ -1,0 +1,164 @@
+﻿@model ScrapiWebAPI.Models.RequestModel
+@using BaseScraperLibrary;
+@using WebScrapingUI.Resources;
+@using System.Web.UI.WebControls;
+
+<html>
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="jumbotron">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <h3>@Home.Type</h3>
+
+            @Html.EditorFor(Model => Model.ItemName, new { @class = "search" })
+            @Html.ValidationMessageFor(Model => Model.ItemName, "", new { @class = "text-danger" })
+
+            <br>
+            <h3>@Home.Categories</h3>
+
+            <div>
+                @foreach (var cat in Enum.GetValues(typeof(AvailableCategories)))
+                {
+                    <a href="javascript:void(0)" class="dropbtn" onclick="myFunction.call(this)">@(cat.ToString().Replace('_', ' '))(@((ViewData["sites"] as Dictionary<string, string>).Where(s => s.Value == cat.ToString()).Select(s => s.Key).Count()))</a>
+                    <div class="dropdown-content hide" id="myDropdown2">
+                        <div class="checkboxes_container">
+                            @foreach (string site in (ViewData["sites"] as Dictionary<string, string>).Where(s => s.Value == cat.ToString()).Select(s => s.Key))
+                            {
+                                <div class="div_check">
+                                    <strong>@site</strong>
+                                    @Html.CheckBoxFor(Model => Model.AllSites[site])
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <br>
+                }
+                @*@{
+            TreeView myTree = new TreeView();
+            myTree.ExpandDepth = 1;
+            myTree.ID = "Categories";
+            myTree.CollapseAll();
+            myTree.ShowCheckBoxes = TreeNodeTypes.All;
+
+            foreach (var cat in Enum.GetValues(typeof(AvailableCategories)))
+            {
+                TreeNode Node = new TreeNode(cat.ToString().Replace('_', ' '), cat.ToString().Replace('_', ' '));
+                <a href="javascript:void(0)" class="dropbtn" onclick="myFunction.call(this)">@(cat.ToString().Replace('_', ' '))(@((ViewData["sites"] as Dictionary<string, string>).Where(s => s.Value == cat.ToString()).Select(s => s.Key).Count()))</a>
+                <div class="dropdown-content hide" id="myDropdown2">
+                    <div class="checkboxes_container">
+                        @foreach (string site in (ViewData["sites"] as Dictionary<string, string>).Where(s => s.Value == cat.ToString()).Select(s => s.Key))
+                        {
+                            <div class="div_check">
+                                @{
+                                    TreeNode childNode = new TreeNode(site, site);
+                                    Node.ChildNodes.Add(childNode);
+                                }
+                                <strong>@site</strong>
+                                @Html.CheckBoxFor(Model => Model.AllSites[site])
+                            </div>
+                        }
+                    </div>
+                </div>
+                <br>
+                myTree.Nodes.Add(Node);
+            }
+        }*@
+            </div>
+
+            <br>
+            <h3>@Home.Prices</h3>
+            <br>
+            @Html.DropDownListFor(Model => Model.Currency, new SelectList(Enum.GetValues(typeof(BaseScraperLibrary.AvailableCurrencies))), Home.Currency, new { @class = "drop disabling" })
+            <br>
+
+            <br>
+            @Html.Label(Home.Min)
+            @Html.TextBoxFor(Model => Model.MinPrice, new { type = "number", min = "0", @class="disabling" })
+            <br><br>
+
+            @Html.Label(Home.Max)
+            @Html.TextBoxFor(Model => Model.MaxPrice, new { type = "number", min = "0", @class="disabling" })
+            <br><br>
+
+            <h3 class="h3_number">@Home.Number</h3>
+            @Html.TextBoxFor(Model => Model.ItemCount, new { @class = "itemcount", type = "number", min = "5", max = "100" })
+            @Html.ValidationMessageFor(Model => Model.ItemCount, "", new { @class = "text-danger" })
+
+            <br><br>
+            <input type="submit" formmethod="post" name="Search" onclick="disableInputs.call()" value=@Home.Search class="btn btn-primary" />
+        }
+    </div>
+
+    <script>
+
+        var drptochoose;
+        function myFunction() {
+            var isAlreadyOpen = false;
+            if (!this.nextElementSibling.classList.contains('hide')) {
+                // if the clicked button dropdown is already open then use this bool to not show it again.
+                isAlreadyOpen = true;
+            }
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var d = 0; d < dropdowns.length; d++) {
+                var openDropdown = dropdowns[d];
+                if (!openDropdown.classList.contains('hide')) {
+                    openDropdown.classList.toggle("hide");
+                }
+            }
+            if (!isAlreadyOpen) {
+                // if the dropdown was hidden when clicked then show it
+                this.nextElementSibling.classList.toggle("hide");
+            }
+        }
+
+        var drops = document.getElementsByClassName("dropbtn");
+        var divs;
+        var boxes = [];
+        for (let d = 0; d < drops.length; d++) {
+            if (drops[d].textContent == "Vacancies(2)") {
+                divs = drops[d].nextElementSibling.getElementsByClassName("div_check");
+                for (let i = 0; i < divs.length; i++) {
+                    let checkboxes = divs[i].getElementsByTagName("input");
+                    for (let c = 0; c < checkboxes.length; c++) {
+                        boxes.push(checkboxes[c]);
+                    }
+                    for (let b = 0; b < boxes.length; b++) {
+                        boxes[b].addEventListener("change", disableInputs);
+                    }
+                }
+                break;
+            }
+        }
+
+        function disableInputs() {
+            var isAnyChecked = false;
+            const inputs = document.getElementsByClassName("disabling");
+            for (let b = 0; b < boxes.length; b++) {
+                if (boxes[b].checked == true) {
+                    console.log("checked");
+                    isAnyChecked = true;
+                    for (let i = 0; i < inputs.length; i++) {
+                        inputs[i].disabled = true;
+                    }
+                    break;
+                }
+            }
+            if (!isAnyChecked) {
+                console.log("unchecked");
+                for (let i = 0; i < inputs.length; i++) {
+                    inputs[i].disabled = false;
+                }
+            }         
+        }
+
+    </script>
+
+</body>
+</html>
